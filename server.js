@@ -18,8 +18,10 @@ const ObjectID = require('mongodb').ObjectID;
 
 async function main() {
   const DATABASE_NAME = 'cs193x-db';
-  const MONGO_URL = `mongodb://localhost:27017/${DATABASE_NAME}`;
-
+  //const MONGO_URL = `mongodb://localhost:27017/${DATABASE_NAME}`;
+  const MONGO_URL = `mongodb+srv://Owo:<password>@cluster0-tglrc.mongodb.net/test?retryWrites=true&w=majority
+/${DATABASE_NAME}`;
+  
   // The "process.env.MONGODB_URI" is needed to work with Heroku.
   db = await MongoClient.connect(process.env.MONGODB_URI || MONGO_URL);
   const diaries = db.collection('diaries');
